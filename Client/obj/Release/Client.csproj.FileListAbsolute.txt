@@ -1,0 +1,8 @@
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\bin\Release\Client.exe.config
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\bin\Release\Client.exe
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\bin\Release\Client.pdb
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\obj\Release\Client.csproj.AssemblyReference.cache
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\obj\Release\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\obj\Release\Client.csproj.CoreCompileInputs.cache
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\obj\Release\Client.exe
+C:\Users\bruna.oliveira\DEV\ProjectTCP-AccessLog\Client\obj\Release\Client.pdb
