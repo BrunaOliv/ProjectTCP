@@ -26,22 +26,21 @@ namespace Server
             List<AccessLog> list = new List<AccessLog>();
             string dateString, format;
             CultureInfo provider = CultureInfo.InvariantCulture;
-            int resultHttpResult, sizeRequest;
             DateTime dt;
+            Match match;
+            bool result;
             for (int i = 0; i < dataList.Count(); i++)
             {
-                Match match = rgx.Match(dataList[i]);
+                match = rgx.Match(dataList[i]);
+                if (match.Success)
+                {
+                    dateString = match.Groups[4].Value;
+                    format = "dd/MMM/yyyy:HH:mm:ss zzzz";
+                    result = DateTime.TryParseExact(dateString, format, provider, DateTimeStyles.None, out dt);
 
-                dateString = match.Groups[4].Value;
-                format = "dd/MMM/yyyy:HH:mm:ss zzzz";
-                bool result = DateTime.TryParseExact(dateString, format, provider, DateTimeStyles.None, out dt);
-
-                bool isParsable = Int32.TryParse(match.Groups[6].Value, out resultHttpResult);
-
-                bool isParsable2 = Int32.TryParse(match.Groups[7].Value, out sizeRequest);
-
-                list.Add(new AccessLog() { Id = 0, IpOrigin = match.Groups[1].Value, Url = match.Groups[5].Value, HttpResult = resultHttpResult, Date = dt, SizeRequest = sizeRequest, User = null, IpDestination = null });
-
+                    list.Add(new AccessLog() { Id = 0, IpOrigin = match.Groups[1].Value, Url = match.Groups[5].Value, HttpResult = Int32.Parse(match.Groups[6].Value), Date = dt, SizeRequest = Int32.Parse(match.Groups[7].Value), User = null, IpDestination = null });
+                }
+                
             }
 
             InsertMassiveData(list);
